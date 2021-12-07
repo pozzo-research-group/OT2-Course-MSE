@@ -18,8 +18,8 @@ class design_space:
             print('AA_min should be smaller than AA_max!')
         if AG_min > AG_max:
             print('AG_min should be smaller than AG_max!')
-        f1 = np.linspace(AA_min, AA_max, 6)
-        f2 = np.linspace(AG_min, AG_max, 8)
+        f1 = np.linspace(AA_min, AA_max, 6)                                         #Number of samples reagent 1 (x-axis)
+        f2 = np.linspace(AG_min, AG_max, 8)                                         #Number of samples reagent 2 (y-axis)
         m1,m2 = np.meshgrid(f1,f2)
         fig, ax = plt.subplots(figsize = (7,5))
         for i in range(m1.shape[0]):
@@ -49,9 +49,9 @@ class design_space:
         display(w)
 
     def graph_to_volumes(self):
-        stock_conc_1=0.0063 #M
-        stock_conc_2=0.00064 #M
-        v_sample = 1300 #uL 
+        stock_conc_1=0.0063 #M                                                         #Stock solution concentration of reagent 1 
+        stock_conc_2=0.00064 #M                                                        #Stock solution coencentration of reagent 2 
+        v_sample = 1300 #uL                                                            #Total sample volume 
         return self.design_var_1*v_sample/stock_conc_1/10**5, self.design_var_2*v_sample/stock_conc_2/10**5
 
 
@@ -108,13 +108,13 @@ class experiment:
         protocol.to_csv('OT2_code/protocol.csv', header = False, index = False)
 
     def create_samples(self):
-        CTAB = np.array([416]*self.design_var_1.shape[0]).reshape(-1,1)
-        Chloroauric = np.array([256]*self.design_var_1.shape[0]).reshape(-1,1)
-        SEEDS = np.array([102]*self.design_var_1.shape[0]).reshape(-1,1)
+        CTAB = np.array([416]*self.design_var_1.shape[0]).reshape(-1,1)                         #Volume of CTAB 
+        Chloroauric = np.array([256]*self.design_var_1.shape[0]).reshape(-1,1)                  #Volume of Chloroauric acid
+        SEEDS = np.array([102]*self.design_var_1.shape[0]).reshape(-1,1)                        #Volume of Seeds
         array = np.hstack((CTAB, Chloroauric, self.design_var_1, self.design_var_2, SEEDS))
-        water = 1300 - np.sum(array, axis=1)
-        array = np.hstack((water.reshape(-1,1), array))
-        df = pd.DataFrame(array, columns = ['Water-stock', 'CTAB-stock', 'Chloroauric-stock', 'Ascorbic_Acid-stock','Silver_Nitrate-stock','Gold_Seeds-stock'])
+        water = 1300 - np.sum(array, axis=1)                                                    #Total sample volume 
+        array = np.hstack((array[:,0].reshape(-1,1), water.reshape(-1,1), array[:,1:]))
+        df = pd.DataFrame(array, columns = ['CTAB-stock', 'Water-stock', 'Chloroauric-stock', 'Ascorbic_Acid-stock','Silver_Nitrate-stock','Gold_Seeds-stock'])
         df.to_csv('OT2_code/samples.csv')
 
     def stock_position(self):
@@ -136,7 +136,7 @@ class experiment:
             print(k+"\t", v)
 
     def simulate_protocol(self):
-        START_POS = 0
+        START_POS = 0                                                                             #Start Position of wellplate 
         self.directions = ALH.create_sample_making_directions(self.stock_volumes, self.stock_position_info, self.loaded_dict, start_position=START_POS)
         ALH.pipette_volumes_component_wise(self.protocol, self.directions, self.loaded_dict) 
 
