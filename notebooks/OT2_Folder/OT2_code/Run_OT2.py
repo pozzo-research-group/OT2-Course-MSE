@@ -28,9 +28,9 @@ class run_protocol:
                   'OT2 Left Tipracks',
                   'OT2 Left Tiprack Slots',
                   'OT2 Bottom Dispensing Clearance (mm)']
-        description = [["opentrons_96_tiprack_1000ul"],
-                      '["'+ str(wellplate_pos) + '"]',
-                      ["opentrons_96_tiprack_1000ul"],
+        description = [["opentrons_96_tiprack_1000ul"],                 # Destination labware
+                      '["'+ str(wellplate_pos) + '"]',          
+                      ["opentrons_96_tiprack_1000ul"],                  # Stock Labware 
                       '["'+ str(stock_pos) + '"]',
                       '"' + 'p1000_single' + '"',
                       500,
@@ -53,7 +53,7 @@ class run_protocol:
         path = r"Samples_and_Protocol/protocol.csv"
         chem_path = r"OT2_code/Chemical Database.csv"
         samples =  r"Samples_and_Protocol/samples.csv"
-        plan = CreateSamples.get_experiment_plan(path, chem_path)
+        self.plan = CreateSamples.get_experiment_plan(path, chem_path)
         stock_volumes = CreateSamples.concentration_from_csv(samples)
         stock_volumes = stock_volumes.loc[:, ~stock_volumes.columns.str.contains('^Unnamed')]
         stock_volumes['CTAB-stock'].sum(axis=0)
@@ -61,7 +61,7 @@ class run_protocol:
         labware_dir_path = r"Custom Labware"
         custom_labware_dict = ALH.custom_labware_dict(labware_dir_path)
         self.protocol = simulate.get_protocol_api('2.8') #
-        self.loaded_dict = ALH.loading_labware(self.protocol, plan)
+        self.loaded_dict = ALH.loading_labware(self.protocol, self.plan)
         max_source_vol = 17000
         self.stock_position_info = ALH.stock_well_ranges(stock_volumes, self.loaded_dict, max_source_vol)
         self.stock_volumes = stock_volumes
@@ -77,10 +77,10 @@ class run_protocol:
     def execute_protocol(self):
         # Executing 
         protocol = execute.get_protocol_api('2.8')
-        loaded_dict = ALH.loading_labware(protocol, self.plan)
+        self.loaded_dict = ALH.loading_labware(protocol, self.plan)
         max_source_vol = 17000
         stock_position_info = ALH.stock_well_ranges(self.stock_volumes, self.loaded_dict, max_source_vol) 
-        directions = ALH.create_sample_making_directions(self.stock_volumes, self.stock_position_info, loaded_dict, start_position=self.START_POS)
+        directions = ALH.create_sample_making_directions(self.stock_volumes, self.stock_position_info, self.loaded_dict, start_position=self.START_POS)
         ALH.pipette_volumes_component_wise(protocol, directions, loaded_dict)
 
 
