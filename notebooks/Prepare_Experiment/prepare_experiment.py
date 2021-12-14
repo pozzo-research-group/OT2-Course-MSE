@@ -5,17 +5,19 @@ from IPython.display import display
 from ipywidgets import interactive
 import importlib
 
+
+#
 class design_space:
     def __init__(self):
          return 
         
-    def f(self, AA_min = 9.70, AA_max= 72.6, AG_min= 1, AG_max= 7.3):
-        if AA_min > AA_max:
-            print('AA_min should be smaller than AA_max!')
-        if AG_min > AG_max:
-            print('AG_min should be smaller than AG_max!')
-        f1 = np.linspace(AA_min, AA_max, 6)                                         #Number of samples reagent 1 (x-axis)
-        f2 = np.linspace(AG_min, AG_max, 8)                                         #Number of samples reagent 2 (y-axis)
+    def f(self, Ascorbic_Acid_min = 9.70, Ascorbic_Acid_max= 72.6, Silver_Nitrate_min= 1, Silver_Nitrate_max= 7.3):
+        if Ascorbic_Acid_min > Ascorbic_Acid_max:
+            print('Ascorbic_Acid_min should be smaller than Ascorbic_Acid_max!')
+        if Silver_Nitrate_min > Silver_Nitrate_max:
+            print('Silver_Nitrate_min should be smaller than Silver_Nitrate_max!')
+        f1 = np.linspace(Ascorbic_Acid_min, Ascorbic_Acid_max, 6)                                         #Number of samples reagent 1 (x-axis)
+        f2 = np.linspace(Silver_Nitrate_min, Silver_Nitrate_max, 8)                                       #Number of samples reagent 2 (y-axis)
         m1,m2 = np.meshgrid(f1,f2)
         fig, ax = plt.subplots(figsize = (7,5))
         for i in range(m1.shape[0]):
@@ -41,7 +43,7 @@ class design_space:
         self.design_var_2 = design_var_2
 
     def display_graph(self):
-        w = interactive(self.f, AA_min=(9.7,72.6,0.5), AA_max=(9.7,72.6,0.5), AG_min = (1,7.3,0.05), AG_max = (1,7.3,0.05))
+        w = interactive(self.f, Ascorbic_Acid_min=(9.7,72.6,0.5), Ascorbic_Acid_max=(9.7,72.6,0.5), Silver_Nitrate_min = (1,7.3,0.05), Silver_Nitrate_max = (1,7.3,0.05))
         display(w)
 
     def graph_to_volumes(self):

@@ -69,7 +69,7 @@ class run_protocol:
             print(k+"\t", v)
 
     def simulate_protocol(self):
-        self.START_POS = 0                                                                             #Start Position of wellplate 
+        self.START_POS = 0                                              #Start Position of wellplate 
         self.directions = ALH.create_sample_making_directions(self.stock_volumes, self.stock_position_info, self.loaded_dict, start_position=self.START_POS)
         ALH.pipette_volumes_component_wise(self.protocol, self.directions, self.loaded_dict) 
 
@@ -81,7 +81,7 @@ class run_protocol:
         max_source_vol = 17000
         stock_position_info = ALH.stock_well_ranges(self.stock_volumes, self.loaded_dict, max_source_vol) 
         directions = ALH.create_sample_making_directions(self.stock_volumes, self.stock_position_info, self.loaded_dict, start_position=self.START_POS)
-        ALH.pipette_volumes_component_wise(protocol, directions, loaded_dict)
+        ALH.pipette_volumes_component_wise(protocol, directions, self.loaded_dict)
 
 
 
