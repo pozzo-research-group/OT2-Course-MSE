@@ -9,11 +9,11 @@ The purpose of this module is to introduce high-throughput experimentation for t
 
 1. To install this library, first download the zip file from github.
 
-<img src= "images/download_zip.jpg" width = "700"/>
+<img src= "images/download_zip.jpg" width = "300"/>
 
 2. Open the jupyter notebook from the OT2 app.
 
-<img src= "images/jupyter notebook OT2.jpg" width = "700"/>
+<img src= "images/jupyter notebook OT2.jpg" width = "400"/>
 
 3. Upload the zip file to the OT2 jupyter notebook.
 
@@ -24,5 +24,7 @@ The purpose of this module is to introduce high-throughput experimentation for t
 <img src= "images/terminal.jpg" width = "700"/>   
 
 5. Run the following codes to unzip the file:
-	cd var/lib/jupyter/notebooks 
-	unzip OT2-Course-MSE
+'''
+cd var/lib/jupyter/notebooks 
+unzip OT2-Course-MSE
+'''
