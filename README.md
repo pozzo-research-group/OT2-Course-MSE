@@ -31,10 +31,8 @@ The purpose of this module is to introduce high-throughput experimentation for t
 <img src= "images/terminal.jpg" width = "700"/>   
 </p>
 
-5. Run the following codes to unzip the file:
+5. Run the following lines of code to unzip the file:
 ```
-
 	cd var/lib/jupyter/notebooks 
 	unzip OT2-Course-MSE
-
 ```
