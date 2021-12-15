@@ -34,5 +34,5 @@ The purpose of this module is to introduce high-throughput experimentation for t
 5. Run the following lines of code to unzip the file:
 ```
 	cd var/lib/jupyter/notebooks 
-	unzip OT2-Course-MSE
+	unzip OT2-Course-MSE-main
 ```
