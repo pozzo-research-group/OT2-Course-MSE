@@ -2,6 +2,11 @@
 Course documents and code for introduction to high-throughput experimentation module for MSE
 
 ## Description 
+
+<p align="center">
+<img src= "images/summary.jpg" width = "700"/>
+</p>
+
 The purpose of this module is to introduce high-throughput experimentation for the synthesis of gold nanoparticles. Students will explore the design space used to create gold nanoparticles and then autonomously synthesize them using an OT2 liquid handling robot. Depending on the chosen regent concentrations, nanospheres or nanorods may form, which can sometimes be identified by the sample's color, or more accurately, by characterizing them using Uv-vis Spectroscopy. All the modules can be easily run using jupyter notebooks, without any coding experience.  
 
 
