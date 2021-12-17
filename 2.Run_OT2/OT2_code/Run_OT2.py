@@ -9,8 +9,8 @@ class run_protocol:
         return 
 
     def create_protocol(self):
-        wellplate_pos = input('Enter position of the falcon 48 wellplate (1-11): ')
-        stock_pos = input('Enter position of the stock solution (1-11): ')
+        wellplate_pos = input('Enter position of the destination wellplate (1-11): ')
+        stock_pos = input('Enter position of the stock solution sample holder (1-11): ')
         large_tiprack_pos = input('Enter position of the 1000uL tiprack (1-11): ')
         small_tiprack_pos = input('Enter position of the 300uL tiprack (1-11): ')
         labels = ['OT2 Destination Labwares',
@@ -28,9 +28,9 @@ class run_protocol:
                   'OT2 Left Tipracks',
                   'OT2 Left Tiprack Slots',
                   'OT2 Bottom Dispensing Clearance (mm)']
-        description = [["opentrons_96_tiprack_1000ul"],                 # Destination labware
+        description = [["corning_48_wellplate_1.6ml_flat"],                 # Destination labware
                       '["'+ str(wellplate_pos) + '"]',          
-                      ["opentrons_96_tiprack_1000ul"],                  # Stock Labware 
+                      ["20mlscintillation_12_wellplate_18000ul"],                  # Stock Labware 
                       '["'+ str(stock_pos) + '"]',
                       '"' + 'p1000_single' + '"',
                       500,
@@ -58,9 +58,9 @@ class run_protocol:
         stock_volumes = stock_volumes.loc[:, ~stock_volumes.columns.str.contains('^Unnamed')]
         stock_volumes['CTAB-stock'].sum(axis=0)
         stock_volumes.astype(int)
-        labware_dir_path = r"Custom Labware"
-        custom_labware_dict = ALH.custom_labware_dict(labware_dir_path)
-        self.protocol = simulate.get_protocol_api('2.8') #
+        labware_dir_path = r"OT2_code/Custom_Labware"
+        self.custom_labware_dict = ALH.custom_labware_dict(labware_dir_path)
+        self.protocol = simulate.get_protocol_api('2.8', extra_labware=self.custom_labware_dict) #
         self.loaded_dict = ALH.loading_labware(self.protocol, self.plan)
         max_source_vol = 17000
         self.stock_position_info = ALH.stock_well_ranges(stock_volumes, self.loaded_dict, max_source_vol)
@@ -76,7 +76,7 @@ class run_protocol:
 
     def execute_protocol(self):
         # Executing 
-        protocol = execute.get_protocol_api('2.8')
+        protocol = execute.get_protocol_api('2.8', extra_labware=self.custom_labware_dict)
         self.loaded_dict = ALH.loading_labware(protocol, self.plan)
         max_source_vol = 17000
         stock_position_info = ALH.stock_well_ranges(self.stock_volumes, self.loaded_dict, max_source_vol) 
