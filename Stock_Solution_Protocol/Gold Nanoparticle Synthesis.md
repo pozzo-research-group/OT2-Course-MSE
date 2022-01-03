@@ -52,7 +52,7 @@ Gold Seeds:
    1. Mix 5 mL of the 200 mM CTAB stock solution with 5 mL of the 0.5 mM Gold Chloride hydrate stock solution. Heat the mixture to 30 degrees Celsius and stir at 800 rpm. The mixture should be yellow. 
    2. 5 minutes later, add 0.6 mL of the freshly made, ice-cold 10 mM Sodium Borohydride to the mixture. It should immediately turn brown in color. 
    3. Wait another 5 minutes and then turn off the stirring but keep the heating. Wait and additional 30 minutes for the seeds to grow. The final solution should be a brownish color. 
-   4. In another 20 mL flask, add 1.59 mL of the seed solution that was just made, and 18.41 mL of water to make the seed stock solution. This diluted seed stock solution will be used to synthesize the nanorods. 
+   4. In another 20 mL flask, add 1.59 mL of the seed solution that was just made, and 18.41 mL of water to make the seed stock solution. This diluted seed stock solution will be used to synthesize the nanoparticles. 
 
 
 **Summary**
