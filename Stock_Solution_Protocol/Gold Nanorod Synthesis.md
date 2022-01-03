@@ -1,8 +1,8 @@
-﻿Gold Nanorod Synthesis 
+﻿Gold Nanoparticle Synthesis 
 
 **Objective**
 
-Perform gold nanorod synthesis by the seed mediated growth method and explore the experimental design space that leads to different nanostructures. This method can be used to synthesize around 96 samples of volumes of 1300 uL.  
+Perform gold nanoparticle synthesis by the seed mediated growth method and explore the experimental design space that leads to different nanostructures. This method can be used to synthesize around 96 samples of volumes of 1300 uL.  
 
 **Materials**
 
@@ -37,9 +37,10 @@ Table I. Stock Solution Information
 |Silver Nitrate |0.64|2.17|20|
 |Ascorbic Acid |6.30|22.2|20|
 |Sodium Borohydride|10.0  |7.56|10 |
+
 Additional Instructions 
 
-CTAB: To fully dissolve CTAB into the solution, it must be heated to at least 30 degrees Celsius and stirred at 1000 – 1200 rpm. It may also take around 30 minutes for this to happen. This stock solution must be kept at 30 degrees Celsius after it is fully dissolved, if not it will crystalize. Use this stock solution immediately after removing it from the hot plate and return it to the plate if not in use. If crystals start to form, re-heat the solution. 
+CTAB: To fully dissolve CTAB into the solution, it must be heated to at least 30 degrees Celsius and stirred at 1000 – 1200 rpm. The solution should be fully transparent when dissolved. It may also take around 30 minutes for this to happen. This stock solution must be kept at 30 degrees Celsius after it is fully dissolved, if not it will crystalize. Use this stock solution immediately after removing it from the hot plate and return it to the plate if not in use. If crystals start to form, re-heat the solution. 
 
 Gold Chloride hydrate: It may be easier to first create a 1M solution of Gold Chloride hydrate , and then use that to make the stock solutions. The 1mM solution can be made with 20 uL of 1M Gold Chloride hydrate and 19.98 mL of water, while the 0.5 mM solution can be made with 10 uL of 1 M Gold Chloride hydrate and 20 mL of water.
 
@@ -49,19 +50,12 @@ Sodium Borohydride: The reaction between this chemical and water is highly exoth
 
 1. Synthesize the seed solution (35 minutes)
    1. Mix 5 mL of the 200 mM CTAB stock solution with 5 mL of the 0.5 mM Gold Chloride hydrate stock solution. Heat the mixture to 30 degrees Celsius and stir at 800 rpm. The mixture should be yellow. 
-   1. 5 minutes later, add 0.6 mL of the freshly made, ice-cold 10 mM Sodium Borohydride to the mixture. It should immediately turn brown in color. 
-   1. Wait another 5 minutes and then turn off the stirring but keep the heating. Wait and additional 30 minutes for the seeds to grow. The final solution should be a brownish color. 
-   1. In another 20 mL flask, add 1.59 mL of the seed solution that was just made, and 18.41 mL of water to make the seed stock solution. This diluted seed stock solution will be used to synthesize the nanorods. 
-1. Nanorod synthesis (For sample of 1300 uL):
-   1. Pipette 326 uL of DI water into the destination labware.  
-   1. Pipette 416 uL of the CTAB stock solution into the destination labware. 
-   1. Pipette 256 uL of the Gold Chloride hydrate stock solution into the destination labware. The mixture should be yellow. 
-   1. Pipette 110 uL of the Silver Nitrate stock solution into the destination labware.
-   1. Pipette 90 uL of the Ascorbic Acid stock solution into the destination labware. Stir the mixture by repeatedly aspirating and dispensing the mixture. The mixture should turn transparent. 
-   1. Pipette 102 uL of the diluted seed stock solution into the destination labware. Keep solution heated at 30 degrees Celsius and wait 1 hour for the gold rods to grow. Gold nanorods are usually purple or blue. 
-1. ` `Explore the experimental design space and create different nanostructures.
-   1. Vary the volumes of the stock solution concentrations that are added to the mixture. 
+   2. 5 minutes later, add 0.6 mL of the freshly made, ice-cold 10 mM Sodium Borohydride to the mixture. It should immediately turn brown in color. 
+   3. Wait another 5 minutes and then turn off the stirring but keep the heating. Wait and additional 30 minutes for the seeds to grow. The final solution should be a brownish color. 
+   4. In another 20 mL flask, add 1.59 mL of the seed solution that was just made, and 18.41 mL of water to make the seed stock solution. This diluted seed stock solution will be used to synthesize the nanorods. 
 
+
+To synthesize gold nanoparticles, the following stock solutions will be used. 
 ` `Table II. Suggested Design Space to explore  
 
 |Reagent|Volume Range (uL)|
