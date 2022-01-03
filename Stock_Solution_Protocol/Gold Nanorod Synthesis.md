@@ -1,4 +1,4 @@
-﻿Gold Nanoparticle Synthesis 
+﻿**Gold Nanoparticle Synthesis** 
 
 **Objective**
 
@@ -44,9 +44,9 @@ CTAB: To fully dissolve CTAB into the solution, it must be heated to at least 30
 
 Gold Chloride hydrate: It may be easier to first create a 1M solution of Gold Chloride hydrate , and then use that to make the stock solutions. The 1mM solution can be made with 20 uL of 1M Gold Chloride hydrate and 19.98 mL of water, while the 0.5 mM solution can be made with 10 uL of 1 M Gold Chloride hydrate and 20 mL of water.
 
-Sodium Borohydride: The reaction between this chemical and water is highly exothermic, which is why the stock solution must be made in ice-cold water. This stock solution must be used immediately after it is made and cannot be reused.
+Sodium Borohydride: The reaction between this chemical and water is highly exothermic, which is why the stock solution must be made in ice-cold water. This stock solution must be used immediately after it is made and cannot be reused. This stock solution is only used to synthesize the gold seeds. 
 
-**Procedure** 
+Gold Seeds:
 
 1. Synthesize the seed solution (35 minutes)
    1. Mix 5 mL of the 200 mM CTAB stock solution with 5 mL of the 0.5 mM Gold Chloride hydrate stock solution. Heat the mixture to 30 degrees Celsius and stir at 800 rpm. The mixture should be yellow. 
@@ -55,9 +55,11 @@ Sodium Borohydride: The reaction between this chemical and water is highly exoth
    4. In another 20 mL flask, add 1.59 mL of the seed solution that was just made, and 18.41 mL of water to make the seed stock solution. This diluted seed stock solution will be used to synthesize the nanorods. 
 
 
-To synthesize gold nanoparticles, the following stock solutions will be used. 
-` `Table II. Suggested Design Space to explore  
+**Summary**
 
+To synthesize gold nanoparticles, the following stock solutions will be used. 
+
+Table II. Suggested Design Space to explore  
 |Reagent|Volume Range (uL)|
 | :-: | :-: |
 |CTAB|20-450|
