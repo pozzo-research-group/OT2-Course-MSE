@@ -7,7 +7,7 @@ class plot_data:
         return 
     
     def load_data(self):
-        self.df = pd.read_excel('Characterize_Samples/spectra_itr1.xlsx')
+        self.df = pd.read_excel('Characterize_Samples/spectra.xlsx')
         
     def plot_all_spectra(self):
         array = np.asarray(self.df)
