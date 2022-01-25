@@ -20,6 +20,8 @@ class plot_data:
         samples = array.shape[1]
         columns = 8
         rows = (samples + columns - 1) // columns - 1
+        Max_Intensity = np.max(array[:,1:])
+        Min_Intensity = np.min(array[:,1:])
         fig, ax = plt.subplots(figsize = (60,columns*4),ncols = columns, nrows = rows)
         for sample in range(array.shape[1]-1):
             if option == 1: # Option to fill columns by column 
@@ -32,4 +34,5 @@ class plot_data:
             ax[int(y), int(x)].set_title(self.df.columns[sample+1],x = 0.07, y = 0.95, size='25', weight='bold', pad=-15)
             ax[int(y), int(x)].set_xlabel('Wavelength (nm)', size='19',)
             ax[int(y), int(x)].set_ylabel('Intensity', size='19',)
+            ax[int(y), int(x)].set_ylim([Min_Intensity, Max_Intensity])
             
